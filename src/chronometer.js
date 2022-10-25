@@ -25,17 +25,13 @@ class Chronometer {
     return this.currentTime%60;
   }
 
-  getMilSeconds() {
-  return Math.floor(this.currentTime/3600);
-  }  
-
   computeTwoDigitNumber(value) {
     // let twoNumbers = ('0' + value)
     // if(twoNumbers.length === 3){
     //   return twoNumbers.slice(1,3)
     // }
     // return twoNumbers
-    return ("0"+value).slice(-5,);
+    return ("0"+value).slice(-2,);
 
   }
 
@@ -51,13 +47,9 @@ class Chronometer {
 
    const minutes = this.getMinutes();
    const seconds = this.getSeconds();
-   const mileseconds = this.getMilSeconds();
-
    const minStr = this.computeTwoDigitNumber(minutes);
    const secStr = this.computeTwoDigitNumber(seconds);
-   const milSecStr = this.computeTwoDigitNumber(mileseconds);
-
-   return `${minStr}:${secStr}:${milSecStr}`;
+   return `${minStr}:${secStr}`;
     
   }
 }
